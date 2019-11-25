@@ -8,7 +8,7 @@
 				<table class="table text-center" id="cart_table" >
 					<thead><tr style="height: 100px;"><td colspan="8" style="line-height: 100px;">总价{{num}}元&nbsp;<a @click="goorder()">提交</a></td></tr></thead>
 					<tr>
-						<td>序号</td>
+						<td>编号</td>
 						<td>商品名</td>
 						<td>商品图片</td>
 						<td>商品规格</td>
