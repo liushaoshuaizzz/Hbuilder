@@ -17,7 +17,7 @@
 				<div id="left_2_3" style="margin: 20px 0px;">
 					<span>客服：</span>&nbsp;
 					<button style="background-color: white;border: 1px solid #EEEEEE;height: 40px;width: 100px;outline: none;">
-						<i class="glyphicon glyphicon-user"></i>联系客服
+						<i class="glyphicon glyphicon-user"></i>联层系客服
 					</button>
 				</div>
 				<div id="left_2_4" style="margin: 20px 0px;width: 800px;">
