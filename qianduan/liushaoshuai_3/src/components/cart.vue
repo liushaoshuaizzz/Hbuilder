@@ -8,7 +8,7 @@
 				<table class="table text-center" id="cart_table" >
 					<thead><tr style="height: 100px;"><td colspan="8" style="line-height: 100px;">总价{{num}}元&nbsp;<a @click="goorder()">提交</a></td></tr></thead>
 					<tr>
-						<td>序号？</td>
+						<td>序号</td>
 						<td>商品名</td>
 						<td>商品图片</td>
 						<td>商品规格</td>
@@ -65,7 +65,7 @@
 					var index=ob.topay[i];
 					console.log(ob.list[index].ctid);
 					ob.ctids.push(ob.list[index].ctid);
-					
+
 				}
 			}
 		},
@@ -88,30 +88,30 @@
 				var ob=this;
 				var url="http://127.0.0.1:8080/firstweb/ajax/deletecart";
 				$.ajax(url,{
-					xhrFields: {"withCredentials": true}, 
+					xhrFields: {"withCredentials": true},
 					async:false,
 					data:{
 						"ctid":ctid,
 					},
-					dataType:"json", 
+					dataType:"json",
 					success: function(result) {
 						ob.list.splice(i,1);
 						ob.topay.splice(i,1);
 					}
-				});	
+				});
 				ob.donum();
 			},
 			countup(ctid,count,i){
 				var ob=this;
 				var url="http://127.0.0.1:8080/firstweb/ajax/changecartcount";
 				$.ajax(url,{
-					xhrFields: {"withCredentials": true}, 
+					xhrFields: {"withCredentials": true},
 					async:false,
 					data:{
 						"ctid":ctid,
 						"gdcount":count
 					},
-					dataType:"json", 
+					dataType:"json",
 					success: function(result) {
 						if(result){
 							ob.list[i].gdcount+=1;
@@ -129,22 +129,22 @@
 				}
 				var url="http://127.0.0.1:8080/firstweb/ajax/changecartcount";
 				$.ajax(url,{
-					xhrFields: {"withCredentials": true}, 
+					xhrFields: {"withCredentials": true},
 					async:false,
 					data:{
 						"ctid":ctid,
 						"gdcount":count
 					},
-					dataType:"json", 
+					dataType:"json",
 					success: function(result) {
 						if(result){
 							if(ob.list[i].gdcount>1){
 								ob.list[i].gdcount-=1;
 							}
-							
+
 						}
 					}
-				});	
+				});
 				ob.donum();
 			},
 		},
@@ -152,8 +152,8 @@
 			var ob=this;
 			var url="http://127.0.0.1:8080/firstweb/ajax/getcart";
 			$.ajax(url,{
-				xhrFields: {"withCredentials": true}, 
-				dataType:"json", 
+				xhrFields: {"withCredentials": true},
+				dataType:"json",
 				success: function(result) {
 					ob.list=result;
 					for(var j in result){
